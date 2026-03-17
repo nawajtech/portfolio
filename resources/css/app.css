@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ========== Tech theme: dark blue/purple + neon ========== */
+:root {
+    --tech-bg: #0a0a0f;
+    --tech-bg-2: #0f0f1a;
+    --tech-bg-3: #12121f;
+    --tech-card: rgba(15, 15, 26, 0.7);
+    --neon-cyan: #22d3ee;
+    --neon-blue: #3b82f6;
+    --neon-purple: #a855f7;
+    --neon-glow-cyan: rgba(34, 211, 238, 0.4);
+    --neon-glow-purple: rgba(168, 85, 247, 0.3);
+}
+
+/* Section titles - neon cyan */
+.section-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.875rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 20px var(--neon-glow-cyan);
+}
+
+@media (min-width: 768px) {
+    .section-title { font-size: 2.25rem; }
+}
+
+.section-title-accent {
+    display: inline-block;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 10px var(--neon-glow-cyan);
+}
+
+/* Tech cards - dark with neon border glow */
+.tech-card {
+    background: var(--tech-card);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tech-card:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+    box-shadow: 0 0 30px var(--neon-glow-cyan), 0 0 60px rgba(168, 85, 247, 0.1);
+    transform: translateY(-2px);
+}
+
+.tech-card-glow {
+    border-left: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+}
+
+/* Text on dark */
+.text-tech-body { color: #cbd5e1; font-size: 1rem; line-height: 1.6; }
+.text-tech-body-sm { color: #94a3b8; font-size: 0.9375rem; line-height: 1.5; }
+.text-tech-muted { color: #64748b; }
+
+/* Inputs - dark with neon focus */
+.tech-input {
+    background: rgba(15, 15, 26, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+}
+
+.tech-input::placeholder { color: #64748b; }
+
+.tech-input:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 0 3px var(--neon-glow-cyan);
+    outline: none;
+}
+
+/* Primary button - neon gradient */
+.btn-tech {
+    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: none;
+    box-shadow: 0 0 20px var(--neon-glow-purple);
+}
+
+.btn-tech:hover {
+    box-shadow: 0 0 30px var(--neon-glow-cyan), 0 0 40px var(--neon-glow-purple);
+    transform: scale(1.02);
+}
+
+/* Navbar over dark */
+.navbar-tech {
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+/* Scroll-in animation (use with Alpine x-intersect) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Hero fade-in (keep existing) */
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Background glow animation */
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+.bg-glow-pulse {
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-shine:hover::after { left: 100%; }
+
+[x-cloak] { display: none !important; }
