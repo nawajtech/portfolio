@@ -7,7 +7,7 @@
             @if(isset($logo) && $logo)
                 <img src="{{ $logo }}" alt="Nawaj Sharif" class="nav-logo-img" width="40" height="40">
             @else
-                <span class="nav-logo-text">NawajS</span>
+                <span class="nav-logo-text">NawjS</span>
             @endif
         </a>
     </div>
