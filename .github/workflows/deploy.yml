@@ -30,6 +30,7 @@ jobs:
             set -e
             cd /var/www/html/portfolio
 
+
             git config --global --add safe.directory /var/www/html/portfolio
             git pull origin main
 
