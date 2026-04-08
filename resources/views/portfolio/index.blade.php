@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    $profilePhotoUrl = (isset($logo) && $logo) ? $logo : asset('images/nawaj-portrait.png');
+@endphp
 <style>
     :root {
         --bg: #08101f;
@@ -126,6 +129,14 @@
         .skill-card:hover,
         .footer-socials a:hover {
             transform: none !important;
+        }
+
+        .profile-avatar:hover {
+            transform: none !important;
+        }
+
+        .profile-lightbox {
+            transition: none !important;
         }
     }
 
@@ -260,10 +271,30 @@
         gap: 16px;
     }
 
-    .nav-logo-link {
+    .nav-logo-link,
+    .nav-logo-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .nav-logo-btn {
+        border: none;
+        padding: 0;
+        background: none;
+        cursor: pointer;
+        border-radius: 50%;
+        font: inherit;
+        color: inherit;
+    }
+
+    .nav-logo-btn:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 3px;
+    }
+
+    .nav-logo-btn:hover .nav-logo-img {
+        box-shadow: 0 0 0 2px rgba(110, 168, 254, 0.35);
     }
 
     .nav-logo-img,
@@ -273,6 +304,7 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: center 22%;
+        transition: box-shadow 0.2s ease;
     }
 
     .nav-logo-text {
@@ -502,6 +534,21 @@
         border: 2px solid rgba(255, 255, 255, 0.18);
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
         background: linear-gradient(135deg, var(--primary), var(--accent));
+        padding: 0;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .profile-avatar:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(110, 168, 254, 0.25);
+    }
+
+    .profile-avatar:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 3px;
     }
 
     .profile-avatar img {
@@ -1181,6 +1228,100 @@
         background: rgba(255,255,255,0.1);
     }
 
+    .profile-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 10001;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+    }
+
+    .profile-lightbox.is-open {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .profile-lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(4, 8, 18, 0.88);
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .profile-lightbox-inner {
+        position: relative;
+        z-index: 1;
+        max-width: min(92vw, 720px);
+        max-height: min(88vh, 900px);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-lightbox-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: min(88vh, 900px);
+        object-fit: contain;
+        vertical-align: middle;
+    }
+
+    .profile-lightbox-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(8, 12, 24, 0.85);
+        color: #fff;
+        font-size: 1.35rem;
+        line-height: 1;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .profile-lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .profile-lightbox-close:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
+
+    body.profile-lightbox-open {
+        overflow: hidden;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
     .reveal-in {
         opacity: 0;
         transform: translateY(18px);
@@ -1356,13 +1497,13 @@
 <nav class="nav-header" aria-label="Primary">
     <div class="nav-inner">
         <div class="nav-logo">
-            <a href="#home" class="nav-logo-link" aria-label="Nawaj Sharif - Home">
+            <button type="button" class="nav-logo-btn nav-profile-trigger" aria-label="View profile photo larger" data-profile-src="{{ $profilePhotoUrl }}">
                 @if(isset($logo) && $logo)
-                    <img src="{{ $logo }}" alt="Nawaj Sharif" class="nav-logo-img" width="46" height="46">
+                    <img src="{{ $logo }}" alt="" class="nav-logo-img" width="46" height="46" decoding="async">
                 @else
-                    <img src="{{ asset('images/nawaj-portrait.png') }}" alt="Nawaj Sharif" class="nav-logo-img" width="46" height="46">
+                    <img src="{{ asset('images/nawaj-portrait.png') }}" alt="" class="nav-logo-img" width="46" height="46" decoding="async">
                 @endif
-            </a>
+            </button>
         </div>
 
         <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
@@ -1421,9 +1562,9 @@
 
             <div class="hero-card glass reveal-in delay-3">
                 <div class="profile-mini">
-                    <div class="profile-avatar">
-                        <img src="{{ asset('images/nawaj-portrait.png') }}" alt="" width="72" height="72" decoding="async">
-                    </div>
+                    <button type="button" class="profile-avatar nav-profile-trigger" aria-label="View profile photo larger" data-profile-src="{{ $profilePhotoUrl }}">
+                        <img src="{{ $profilePhotoUrl }}" alt="" width="72" height="72" decoding="async">
+                    </button>
                     <div>
                         <h3>Nawaj Sharif</h3>
                         <p>Software Developer focused on backend systems, business logic, scalable APIs, and practical platform development.</p>
@@ -1984,10 +2125,62 @@
     <p class="footer-copy">© 2026 Nawaj Sharif | Backend Developer</p>
 </footer>
 
+<div id="profileLightbox" class="profile-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="profileLightboxHeading">
+    <button type="button" class="profile-lightbox-backdrop" data-close-lightbox tabindex="-1" aria-label="Close"></button>
+    <div class="profile-lightbox-inner">
+        <h2 id="profileLightboxHeading" class="sr-only">Profile photo</h2>
+        <button type="button" class="profile-lightbox-close" data-close-lightbox aria-label="Close photo">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img id="profileLightboxImg" class="profile-lightbox-img" src="{{ $profilePhotoUrl }}" alt="Nawaj Sharif portrait" width="720" height="900" loading="lazy">
+    </div>
+</div>
+
 <script>
     const mainContent = document.getElementById('main-content');
     document.querySelector('.skip-link')?.addEventListener('click', () => {
         window.setTimeout(() => mainContent?.focus({ preventScroll: true }), 0);
+    });
+
+    const profileLightbox = document.getElementById('profileLightbox');
+    const profileLightboxImg = document.getElementById('profileLightboxImg');
+    let profileLightboxLastFocus = null;
+
+    const openProfileLightbox = (src) => {
+        if (!profileLightbox || !profileLightboxImg || !src) return;
+        profileLightboxLastFocus = document.activeElement;
+        profileLightboxImg.src = src;
+        profileLightboxImg.decode?.().catch(() => {});
+        profileLightbox.classList.add('is-open');
+        profileLightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('profile-lightbox-open');
+        const closeBtn = profileLightbox.querySelector('.profile-lightbox-close');
+        window.setTimeout(() => closeBtn?.focus(), 0);
+    };
+
+    const closeProfileLightbox = () => {
+        if (!profileLightbox || !profileLightboxImg) return;
+        profileLightbox.classList.remove('is-open');
+        profileLightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('profile-lightbox-open');
+        if (profileLightboxLastFocus && typeof profileLightboxLastFocus.focus === 'function') {
+            profileLightboxLastFocus.focus();
+        }
+        profileLightboxLastFocus = null;
+    };
+
+    document.querySelectorAll('.nav-profile-trigger').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const src = btn.getAttribute('data-profile-src');
+            if (src) openProfileLightbox(src);
+        });
+    });
+
+    profileLightbox?.querySelectorAll('[data-close-lightbox]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeProfileLightbox();
+        });
     });
 
     const navToggle = document.getElementById('navToggle');
@@ -2000,6 +2193,18 @@
         navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     };
 
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        if (profileLightbox?.classList.contains('is-open')) {
+            closeProfileLightbox();
+            return;
+        }
+        if (navToggle && navMenu && navMenu.classList.contains('open')) {
+            setMenuOpen(false);
+            navToggle.focus();
+        }
+    });
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             setMenuOpen(!navMenu.classList.contains('open'));
@@ -2007,13 +2212,6 @@
 
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => setMenuOpen(false));
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-                setMenuOpen(false);
-                navToggle.focus();
-            }
         });
 
         document.addEventListener('click', (e) => {
