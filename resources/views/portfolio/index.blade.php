@@ -1388,7 +1388,7 @@
         <div class="hero-grid">
             <div class="hero-content">
                 <span class="section-label reveal-in">
-                    <i class="fa-solid fa-circle-check"></i> Available for freelance and full-time opportunities
+                    <i class="fa-solid fa-code"></i> I work full time in Coactive Software and take on freelance work when it fits—building scalable code is my passion
                 </span>
 
                 <h1 class="hero-title reveal-in delay-1">
