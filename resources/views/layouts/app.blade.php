@@ -7,6 +7,7 @@
     <title>@yield('title', 'Nawaj Sharif | Senior Software Developer')</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @unless(request()->routeIs('home'))
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
         body{background:#0f172a;color:#e5e7eb;line-height:1.6}
@@ -152,11 +153,13 @@
         .btn:hover{transform:translateY(-3px)}
         @media (max-width:768px){.nav-links{display:none}.hero h1{font-size:36px}}
     </style>
+    @endunless
     @stack('styles')
 </head>
 <body>
     @yield('content')
 
+    @unless(request()->routeIs('home'))
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (window.location.hash) {
@@ -174,6 +177,7 @@
             reveal();
         });
     </script>
+    @endunless
     @stack('scripts')
 </body>
 </html>
