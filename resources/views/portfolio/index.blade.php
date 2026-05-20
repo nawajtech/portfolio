@@ -2026,7 +2026,7 @@
                     </span>
                 </a>
 
-                <a href="https://wa.me/919002160272" target="_blank" rel="noopener" class="contact-link-card">
+                <a href="https://wa.me/918145900915" target="_blank" rel="noopener" class="contact-link-card">
                     <span class="contact-link-icon"><i class="fa-brands fa-whatsapp"></i></span>
                     <span>
                         <strong>WhatsApp</strong>
