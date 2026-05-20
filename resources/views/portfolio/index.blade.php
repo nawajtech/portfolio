@@ -1529,18 +1529,18 @@
         <div class="hero-grid">
             <div class="hero-content">
                 <span class="section-label reveal-in">
-                    <i class="fa-solid fa-code"></i> I work full time in Coactive Software and take on freelance work when it fits—building scalable code is my passion
+                    <i class="fa-solid fa-code"></i> I’m Engineering Team Lead at Coactive Software and take on freelance work when it fits—scaling both teams and systems is my passion
                 </span>
 
                 <h1 class="hero-title reveal-in delay-1">
                     Hi, I’m Nawaj <span>Sharif</span><br>
-                    Backend Developer
+                    Engineering Team Lead
                 </h1>
 
                 <p class="hero-subtitle reveal-in delay-2">
-                    I specialize in backend development and logic building. I build scalable web applications,
-                    admin panels, APIs, and business platforms that are reliable, structured, and ready for real-world use.
-                    My focus is on clean code, strong backend architecture, and practical solutions that support business growth.
+                    I lead backend delivery and technical direction—mentoring developers, aligning architecture with business goals, and shipping scalable web applications,
+                    admin panels, APIs, and platforms that are reliable and maintainable.
+                    My focus is on clear ownership, strong backend architecture, quality, and outcomes the business can trust.
                 </p>
 
                 <div class="hero-btns reveal-in delay-3">
@@ -1554,9 +1554,9 @@
 
                 <div class="hero-badges reveal-in delay-4">
                     <span class="hero-badge">4+ Years Experience</span>
-                    <span class="hero-badge">Backend & Logic Building</span>
+                    <span class="hero-badge">Team Lead & Delivery</span>
                     <span class="hero-badge">Laravel, PHP & MySQL</span>
-                    <span class="hero-badge">API & Admin Systems</span>
+                    <span class="hero-badge">APIs, Architecture & Admin</span>
                 </div>
             </div>
 
@@ -1567,7 +1567,7 @@
                     </button>
                     <div>
                         <h3>Nawaj Sharif</h3>
-                        <p>Software Developer focused on backend systems, business logic, scalable APIs, and practical platform development.</p>
+                        <p>Engineering Team Lead focused on delivery, backend systems, technical direction, scalable APIs, and practical platform outcomes.</p>
                     </div>
                 </div>
 
@@ -1584,7 +1584,7 @@
                         <i class="fa-solid fa-briefcase"></i>
                         <div>
                             <strong>Specialized In</strong>
-                            <span>Backend development, logic building, admin panels, booking systems, APIs, and business platforms</span>
+                            <span>Team leadership, backend architecture, admin panels, booking systems, APIs, and business platforms</span>
                         </div>
                     </div>
 
@@ -1602,15 +1602,15 @@
         <div class="stats-grid reveal-in delay-4">
             <div class="stat-card glass">
                 <h3>4+</h3>
-                <p>Years of professional experience in software development and backend delivery</p>
+                <p>Years of professional experience in software delivery, backend engineering, and technical leadership</p>
             </div>
             <div class="stat-card glass">
                 <h3>8+</h3>
                 <p>Client and product projects built or contributed to across multiple industries</p>
             </div>
             <div class="stat-card glass">
-                <h3>Core</h3>
-                <p>Strong focus on backend development, business logic, structure, and maintainability</p>
+                <h3>Lead</h3>
+                <p>Leading technical direction, code quality, collaboration, and dependable delivery</p>
             </div>
             <div class="stat-card glass">
                 <h3>2025</h3>
@@ -1623,33 +1623,32 @@
 <section id="about" class="section">
     <div class="container">
         <span class="section-label reveal-in">About Me</span>
-        <h2 class="section-title reveal-in delay-1">I build dependable backend systems with clean logic and real purpose</h2>
+        <h2 class="section-title reveal-in delay-1">I lead dependable backend systems with clean logic and real purpose</h2>
         <p class="section-intro reveal-in delay-2">
-            A short introduction about who I am, what I specialize in, and how I approach software development.
+            A short introduction about who I am, what I lead, and how I approach engineering and delivery.
         </p>
 
         <div class="about-grid">
             <div class="about-content reveal-in delay-2">
                 <p class="about-p">
-                    I’m Nawaj Sharif, a Software Developer with 4+ years of experience in building web applications,
-                    backend systems, admin panels, and scalable APIs. My main strength is backend development and logic building,
-                    where I focus on creating structured, reliable, and maintainable solutions.
+                    I’m Nawaj Sharif, an Engineering Team Lead with 4+ years of experience building web applications,
+                    backend systems, admin panels, and scalable APIs. I still write and review code daily, but my strength is connecting solid technical work to clear delivery:
+                    structured, reliable, and maintainable systems that teams can own.
                 </p>
                 <p class="about-p">
-                    Over the years, I have worked on multiple projects from requirement understanding and database design
-                    to backend development, API integration, business flow implementation, client communication, and deployment support.
-                    I enjoy solving complex requirements with clean logic and practical execution.
+                    I guide work from requirements and database design through development, APIs, business flows, and deployment—supporting developers with clarity,
+                    pairing with stakeholders, and keeping execution predictable. I care about mentoring, pragmatic solutions, and sustainable pace.
                 </p>
                 <p class="about-p">
-                    I continue to grow my skills in React, Python, FastAPI, Docker, and modern deployment practices
-                    so I can build even stronger and more complete systems in the future.
+                    I continue to grow in React, Python, FastAPI, Docker, and modern deployment practices so I can coach the team on stronger,
+                    end-to-end engineering habits.
                 </p>
 
                 <div class="about-vision">
-                    <p class="about-vision-line">I believe good software starts with strong logic.</p>
-                    <p class="about-vision-line">I focus on backend clarity, maintainability, and business value.</p>
+                    <p class="about-vision-line">I believe great products come from strong logic and aligned teams.</p>
+                    <p class="about-vision-line">I focus on clarity, maintainability, business value, and people growing together.</p>
                     <p class="about-vision-line about-vision-last">
-                        My goal is to build systems that are scalable, useful, and dependable for long-term growth.
+                        My goal is systems and ways of working that scale—for users, for the business, and for the people building them.
                     </p>
                 </div>
             </div>
@@ -1657,12 +1656,12 @@
             <div class="about-side-card reveal-in delay-3">
                 <h3>What I can help with</h3>
                 <ul>
-                    <li><i class="fa-solid fa-check"></i> Custom Laravel application development</li>
-                    <li><i class="fa-solid fa-check"></i> Backend architecture and business logic implementation</li>
+                    <li><i class="fa-solid fa-check"></i> Team leadership, prioritization, and delivery ownership</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Laravel application development & technical direction</li>
+                    <li><i class="fa-solid fa-check"></i> Backend architecture, reviews, and business logic implementation</li>
                     <li><i class="fa-solid fa-check"></i> REST API development and integration</li>
-                    <li><i class="fa-solid fa-check"></i> Booking systems and admin panel development</li>
-                    <li><i class="fa-solid fa-check"></i> Database design and backend optimization</li>
-                    <li><i class="fa-solid fa-check"></i> Structured solutions for real business workflows</li>
+                    <li><i class="fa-solid fa-check"></i> Booking systems and admin panel initiatives</li>
+                    <li><i class="fa-solid fa-check"></i> Database design, optimization, and structured workflows</li>
                 </ul>
             </div>
         </div>
@@ -1674,24 +1673,24 @@
         <span class="section-label reveal-in">Services</span>
         <h2 class="section-title reveal-in delay-1">What I do best</h2>
         <p class="section-intro reveal-in delay-2">
-            These are the areas where I can contribute most effectively for products, clients, and business systems.
+            Where I contribute most: platform leadership, hands-on backend excellence, and dependable delivery for clients and internal teams.
         </p>
 
         <div class="services-grid">
             <div class="service-card reveal-in delay-2">
                 <i class="fa-solid fa-server"></i>
-                <h3>Backend Development</h3>
+                <h3>Backend & Architecture</h3>
                 <p>
-                    I build structured and scalable backend systems using Laravel and PHP with a strong focus on performance,
-                    maintainability, and clean project structure.
+                    I design and steer structured, scalable backends with Laravel and PHP—setting patterns, reviewing work, and keeping performance,
+                    maintainability, and project structure healthy.
                 </p>
             </div>
 
             <div class="service-card reveal-in delay-3">
                 <i class="fa-solid fa-diagram-project"></i>
-                <h3>Logic Building</h3>
+                <h3>Team Leadership & Delivery</h3>
                 <p>
-                    I design and implement business logic that keeps applications practical, reliable, and aligned with real workflow requirements.
+                    I lead planning and execution—breaking down complex requirements, unblocking the team, improving clarity, and shipping reliable outcomes alongside developers and stakeholders.
                 </p>
             </div>
 
@@ -1699,7 +1698,7 @@
                 <i class="fa-solid fa-plug-circle-bolt"></i>
                 <h3>API & Admin Systems</h3>
                 <p>
-                    I develop REST APIs, admin panels, and internal business tools that support operations, automation, and platform growth.
+                    I develop REST APIs, admin panels, and internal tools that support operations, automation, and platform growth—with ownership from design to release.
                 </p>
             </div>
         </div>
@@ -1711,7 +1710,7 @@
         <span class="section-label reveal-in">Experience</span>
         <h2 class="section-title reveal-in delay-1">Professional journey and recognition</h2>
         <p class="section-intro reveal-in delay-2">
-            Companies I’ve worked with and the value I delivered through ownership, logic building, execution, and backend development.
+            Companies I’ve worked with and the value I delivered through ownership, leadership on the ground, execution, and strong backend engineering.
         </p>
 
         <div class="experience-wrap">
@@ -1737,8 +1736,8 @@
                 <span class="experience-icon"><i class="fa-solid fa-building"></i></span>
                 <h3 class="experience-company">Coactive IT Solutions Pvt. Ltd. (SAP Partner)</h3>
                 <p class="experience-desc">
-                    Delivering enterprise-focused solutions while managing backend development, business logic, client meetings,
-                    project coordination, and technical execution with a business-first mindset.
+                    Leading and contributing to enterprise-focused delivery—backend development, business logic, cross-functional alignment, client conversations,
+                    technical coordination, and execution with a business-first mindset.
                 </p>
                 <div class="experience-badge">
                     <i class="fa-solid fa-trophy"></i>
@@ -1752,9 +1751,9 @@
 <section id="skills" class="section">
     <div class="container">
         <span class="section-label reveal-in">Skills</span>
-        <h2 class="section-title reveal-in delay-1">Technologies I use to build strong backend products</h2>
+        <h2 class="section-title reveal-in delay-1">Technologies I use to ship strong backend platforms and lead delivery</h2>
         <p class="section-intro reveal-in delay-2">
-            My strongest capabilities are around backend systems, business logic, APIs, admin panels, and practical development workflows.
+            My strongest capabilities span backend systems, team delivery, APIs, admin panels, mentoring, and modern development workflows.
         </p>
 
         <div class="skills-highlight-grid reveal-in delay-2">
@@ -1771,10 +1770,10 @@
             <div class="skill-highlight-card">
                 <h4>Specialized Focus</h4>
                 <div class="tech-strip">
-                    <span class="tech-pill">Backend Development</span>
-                    <span class="tech-pill">Logic Building</span>
-                    <span class="tech-pill">Admin Panels</span>
-                    <span class="tech-pill">Booking Systems</span>
+                    <span class="tech-pill">Team leadership</span>
+                    <span class="tech-pill">Technical direction</span>
+                    <span class="tech-pill">Admin panels</span>
+                    <span class="tech-pill">Booking systems</span>
                 </div>
             </div>
 
@@ -1833,7 +1832,7 @@
         <span class="section-label reveal-in">Projects</span>
         <h2 class="section-title reveal-in delay-1">Selected work across different industries</h2>
         <p class="section-intro reveal-in delay-2">
-            A few projects I’ve built or contributed to, with focus on backend development, business logic, admin systems, and delivery.
+            A few projects I’ve built or contributed to—focused on backend architecture, business logic, admin systems, and reliable delivery.
         </p>
 
         <div class="projects-grid">
@@ -2000,7 +1999,7 @@
                     and internal teams. His backend logic and implementation are practical, stable, and easy to work with.
                 </p>
                 <footer class="testimonial-meta">
-                    <cite class="testimonial-role">Team Lead</cite>
+                    <cite class="testimonial-role">Colleague · Coactive IT Solutions</cite>
                 </footer>
             </blockquote>
         </div>
@@ -2012,7 +2011,7 @@
         <span class="section-label reveal-in">Contact</span>
         <h2 class="section-title reveal-in delay-1">Let’s build something valuable together</h2>
         <p class="contact-subtitle reveal-in delay-2">
-            Looking for a developer to build backend systems, APIs, admin panels, or business logic-driven platforms?
+            Looking for a technical partner or team lead to drive backend systems, APIs, admin panels, or business logic-driven platforms?
             Let’s discuss your project.
         </p>
 
@@ -2122,7 +2121,7 @@
         </a>
     </div>
 
-    <p class="footer-copy">© 2026 Nawaj Sharif | Backend Developer</p>
+    <p class="footer-copy">© 2026 Nawaj Sharif | Engineering Team Lead</p>
 </footer>
 
 <div id="profileLightbox" class="profile-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="profileLightboxHeading">
